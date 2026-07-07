@@ -38,7 +38,18 @@ nav ul li a:hover { opacity: 1; color: #00c3ff; }
 .card h3 { font-size: 20px; font-weight: 700; margin-bottom: 15px; color: #ffffff; }
 .card p { color: #94a3b8; font-size: 14px; line-height: 1.7; }
 .floating-cart { position: fixed; bottom: 30px; right: 40px; padding: 14px 28px; background: linear-gradient(135deg, #00d2ff 0%, #00a2ff 100%); color: #000000; text-decoration: none; border-radius: 30px; font-weight: 700; font-size: 15px; box-shadow: 0 5px 20px rgba(0, 210, 255, 0.4); display: flex; align-items: center; gap: 10px; z-index: 9999; }
-.cart-count { background: #ff3b30; color: white; border-radius: 50%; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; }ify-content: center; font-size: 12px; font-weight: bold; }
+.cart-count { background: #ff3b30; color: white; border-radius: 50%; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; }
+
+/* ෆෝන් සර්ෆින් වලට විතරක් Navbar එක හැඩගස්වන CSS */
+@media (max-width: 768px) {
+    nav { padding: 12px 4%; flex-direction: column; gap: 10px; text-align: center; }
+    .logo-container .logo-text { font-size: 18px; }
+    .logo-container img { height: 32px; }
+    nav ul { justify-content: center; width: 100%; }
+    nav ul li { margin-left: 10px; margin-right: 10px; }
+    nav ul li a { font-size: 13px; }
+    .hero { padding-top: 220px; }
+}
     </style>
 </head>
 <body>
