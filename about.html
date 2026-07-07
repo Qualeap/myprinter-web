@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Quantum Leap Technologies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background: radial-gradient(circle at top, #0f1c3f 0%, #070b19 100%); color: #ffffff; min-height: 100vh; }
+        
+        /* Navbar with Logo Support */
+        nav { position: fixed; top: 0; left: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 15px 6%; background: rgba(7, 11, 25, 0.85); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); z-index: 99999; }
+        .logo-container { display: flex; align-items: center; gap: 12px; }
+        .logo-container img { height: 70px; width: auto; object-fit: contain; }
+        .logo-container .logo-text { font-size: 22px; font-weight: 800; color: #00c3ff; letter-spacing: 1.5px; text-transform: uppercase; }
+        
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 25px; }
+        nav ul li a { color: #ffffff; text-decoration: none; font-size: 15px; font-weight: 500; opacity: 0.8; transition: 0.3s; }
+        nav ul li a:hover { opacity: 1; color: #00c3ff; }
+
+        .content-section { padding: 160px 8% 80px 8%; max-width: 1200px; margin: 0 auto; }
+        .title { font-size: 36px; font-weight: 800; text-align: center; margin-bottom: 40px; color: #ffffff; text-transform: uppercase; letter-spacing: 1px; }
+        
+        /* Big Logo & Branding Styles */
+        .about-branding { text-align: center; margin-bottom: 40px; }
+        .about-branding img { height: 270px; width: auto; object-fit: contain; margin-bottom: 20px; filter: drop-shadow(0px 4px 12px rgba(0, 195, 255, 0.3)); }
+
+        .intro-box { background: rgba(21, 32, 66, 0.3); border: 1px solid rgba(255, 255, 255, 0.05); padding: 40px; border-radius: 16px; margin-bottom: 50px; text-align: center; }
+        .intro-box p { font-size: 17px; color: #cbd5e1; line-height: 1.8; margin-bottom: 15px; }
+        
+        /* Founder Section Styles */
+        .founder-card { background: rgba(21, 32, 66, 0.5); border: 1px solid rgba(0, 195, 255, 0.2); border-radius: 16px; padding: 35px 25px; max-width: 450px; margin: 0 auto 50px auto; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+        .founder-card i { font-size: 45px; color: #00c3ff; margin-bottom: 15px; }
+        .founder-card h4 { font-size: 14px; color: #00c3ff; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; font-weight: 600; }
+        .founder-card h3 { font-size: 24px; font-weight: 700; color: #ffffff; }
+
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 40px; }
+        .feature-card { background: rgba(21, 32, 66, 0.4); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 30px; text-align: center; transition: 0.3s ease; }
+        .feature-card:hover { transform: translateY(-5px); border-color: #00c3ff; }
+        .feature-card i { font-size: 40px; color: #00c3ff; margin-bottom: 20px; }
+        .feature-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 12px; color: #ffffff; }
+        .feature-card p { font-size: 14px; color: #94a3b8; line-height: 1.6; }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo">
+            <span class="logo-text">myprinter.lk</span>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html" style="color: #00c3ff; opacity: 1;">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="content-section">
+        
+        <!-- Big Logo section -->
+        <div class="about-branding">
+            <img src="logo.png" alt="Quantum Leap Logo">
+            <h2 class="title" style="margin-bottom: 10px;">About Quantum Leap Technologies</h2>
+        </div>
+        
+        <div class="intro-box">
+            <p><strong>Quantum Leap Technologies</strong> is a leading and trusted provider of professional IT solutions in Sri Lanka, specializing in computer, laptop, and printer repair services.</p>
+            <p>With years of hands-on industry experience and advanced diagnostic tools, we provide everything from basic troubleshooting to complex <strong>chip-level motherboard repairs</strong>, ensuring your devices get back to peak performance with maximum reliability.</p>
+        </div>
+
+        <!-- Founder Section (මතක ඇතුව [ඔයාගේ නම] කියන තැනට නම ලියන්න මචං) -->
+        <div class="founder-card">
+            <i class="fas fa-user-shield"></i>
+            <h4>Founder & Chief Technician</h4>
+            <h3>[Akila Chinthana]</h3>
+        </div>
+
+        <h2 class="title" style="font-size: 24px; margin-bottom: 30px;">Why Choose Us?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-tools"></i>
+                <h3>Expert Technicians</h3>
+                <p>Skilled expertise in diagnosing and fixing motherboards, power supplies, and complex printer malfunctions.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Trusted Warranty</h3>
+                <p>We provide a reliable warranty for all our repairs and spare parts, ensuring your peace of mind.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-hand-holding-usd"></i>
+                <h3>Affordable Pricing</h3>
+                <p>High-quality technical support at the most reasonable and competitive market rates in Sri Lanka.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

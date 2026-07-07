@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Shop | Quantum Leap Technologies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background: radial-gradient(circle at top, #0f1c3f 0%, #070b19 100%); color: #ffffff; min-height: 100vh; padding-top: 120px; }
+        
+        /* Navbar Styling */
+        nav { position: fixed; top: 0; left: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 15px 6%; background: rgba(7, 11, 25, 0.85); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); z-index: 99999; }
+        .logo-container { display: flex; align-items: center; gap: 15px; }
+        .logo-container img { height: 55px; width: auto; object-fit: contain; }
+        .logo-container .logo-text { font-size: 24px; font-weight: 800; color: #00c3ff; letter-spacing: 1.5px; text-transform: uppercase; }
+        
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 25px; }
+        nav ul li a { color: #ffffff; text-decoration: none; font-size: 15px; font-weight: 500; opacity: 0.8; transition: 0.3s; }
+        nav ul li a:hover { opacity: 1; color: #00c3ff; }
+
+        .shop-container { padding: 40px 8%; max-width: 1200px; margin: 0 auto; }
+        .shop-title { font-size: 32px; font-weight: 700; text-align: center; margin-bottom: 40px; }
+        .shop-title::after { content: ''; display: block; width: 60px; height: 3px; background: #00c3ff; margin: 12px auto 0 auto; border-radius: 2px; }
+
+        /* Items Grid */
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .product-card { background: rgba(21, 32, 66, 0.4); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; overflow: hidden; transition: 0.4s ease; display: flex; flex-direction: column; justify-content: space-between; }
+        .product-card:hover { transform: translateY(-8px); border-color: #00c3ff; box-shadow: 0 15px 35px rgba(0, 195, 255, 0.15); }
+        
+        .img-container { width: 100%; height: 220px; background: #152042; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
+        .product-card img { width: 100%; height: 100%; object-fit: cover; }
+        .no-img-icon { font-size: 48px; color: rgba(255,255,255,0.2); }
+        
+        .badge { position: absolute; top: 15px; right: 15px; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; }
+        .in-stock { background: #00cc66; color: #fff; }
+        .out-of-stock { background: #ff3b30; color: #fff; }
+
+        .product-details { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .p-cat { font-size: 12px; color: #00c3ff; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .p-name { font-size: 18px; font-weight: 700; margin-bottom: 12px; color: #ffffff; line-height: 1.4; }
+        .p-price { font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 20px; }
+        
+        .btn-order { width: 100%; padding: 12px; background: linear-gradient(135deg, #00d2ff 0%, #00a2ff 100%); color: #000000; text-decoration: none; border-radius: 8px; font-weight: 700; text-align: center; display: inline-block; transition: 0.3s; border: none; cursor: pointer; }
+        .btn-order:hover { opacity: 0.9; transform: scale(1.02); }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo">
+            <span class="logo-text">myprinter.lk</span>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="shop.html" style="color: #00c3ff; opacity: 1;">Shop</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="shop-container">
+        <h2 class="shop-title">Our Store</h2>
+        <div class="products-grid" id="products-container">
+            <!-- Google Sheet එකේ බඩු ටික ඔටෝමැටිකලි මෙතනට වැටෙනවා -->
+        </div>
+    </div>
+
+    <script>
+        // Google Sheet එකෙන් ගන්න බැරි වුණොත් ලෝකල් එකේ වැඩ කරන්න හදපු ක්‍රමය
+        const sheetUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQrXt7c6ykCqgwirjnlqX-e6g7SkgkhDJv5Xku82d7T8_9kndqMYklOHKKzIhnY7hf2sKmZBvC1aPUC/pub?output=csv';
+
+        async function fetchProducts() {
+            try {
+                let response = await fetch(sheetUrl);
+                let data = "";
+                
+                if (response.ok) {
+                    data = await response.text();
+                } else {
+                    throw new Error("Local bypass needed");
+                }
+                
+                renderCSV(data);
+            } catch (error) {
+                console.log('Running locally: Using bypass for Google Sheets.');
+                // 💡 ඔයාගේ ෂීට් එකේ තියෙන බඩු ටික මම මෙතනට දැම්මා මචං (කම්පියුටරෙන් බලද්දී මේවා පෙනෙයි)
+                const localBackup = `Item Name,Category,Price,Image Link,Availability
+Epson L130 Formatter Board,Printer Parts,4500,,In Stock
+Solar Powered LED Street Light,Solar Tech,5800,,In Stock`;
+                renderCSV(localBackup);
+            }
+        }
+
+        function renderCSV(data) {
+            const rows = data.split('\n').slice(1);
+            const container = document.getElementById('products-container');
+            container.innerHTML = '';
+
+            rows.forEach(row => {
+                if (!row.trim()) return;
+                
+                const columns = row.split(/,(?=(?:(?:[^"]*"){2})*[^\" ]*$)/).map(col => col.replace(/^"|"$/g, '').trim());
+                const [name, category, price, imgLink, availability] = columns;
+
+                if (!name) return;
+
+                const isOut = availability && availability.toLowerCase().includes('out');
+                const badgeClass = isOut ? 'out-of-stock' : 'in-stock';
+                const badgeText = isOut ? 'Out of Stock' : 'In Stock';
+                
+                const whatsappMsg = encodeURIComponent(`Hi Quantum Leap, I am interested in buying:\n\nItem: ${name}\nPrice: Rs. ${price}`);
+                const waLink = `https://wa.me/94771234567?text=${whatsappMsg}`; 
+
+                const cardHtml = `
+                    <div class="product-card">
+                        <div class="img-container">
+                            ${imgLink ? `<img src="${imgLink}" alt="${name}">` : `<i class="fas fa-box no-img-icon"></i>`}
+                            <span class="badge ${badgeClass}">${badgeText}</span>
+                        </div>
+                        <div class="product-details">
+                            <div>
+                                <p class="p-cat">${category || 'Component'}</p>
+                                <h3 class="p-name">${name}</h3>
+                            </div>
+                            <div>
+                                <p class="p-price">Rs. ${price}/=</p>
+                                <a href="${waLink}" target="_blank" class="btn-order">
+                                    <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += cardHtml;
+            });
+        }
+
+        window.onload = fetchProducts;
+    </script>
+</body>
+</html>

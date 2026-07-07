@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myprinter.lk | Quantum Leap Technologies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+html { scroll-behavior: smooth; }
+body { background: radial-gradient(circle at top, #0f1c3f 0%, #070b19 100%); color: #ffffff; min-height: 100vh; }
+
+/* Navbar CSS (ලෝගෝ එක පැත්තකින් දාන්න ස්ටයිල් එක ඇතුළත් කළා) */
+nav { position: fixed; top: 0; left: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 15px 6%; background: rgba(7, 11, 25, 0.85); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); z-index: 99999; }
+.logo-container { display: flex; align-items: center; gap: 12px; }
+.logo-container img { height: 40px; width: auto; object-fit: contain; }
+.logo-container .logo-text { font-size: 22px; font-weight: 800; color: #00c3ff; letter-spacing: 1.5px; text-transform: uppercase; }
+
+nav ul { display: flex; list-style: none; }
+nav ul li { margin-left: 25px; }
+nav ul li a { color: #ffffff; text-decoration: none; font-size: 15px; font-weight: 500; opacity: 0.8; transition: 0.3s; }
+nav ul li a:hover { opacity: 1; color: #00c3ff; }
+
+/* ඉතිරි සියලුම ස්ටයිල් ඔයා එවපු විදිහටම තියෙනවා */
+.hero { text-align: center; padding: 180px 20px 80px 20px; max-width: 900px; margin: 0 auto; }
+.hero p.eng-sub { font-size: 18px; color: #cbd5e1; opacity: 0.9; font-weight: 400; margin-bottom: 10px; }
+.hero p.sin-sub { font-size: 16px; color: #94a3b8; font-weight: 400; margin-bottom: 40px; }
+.btn-browse { padding: 14px 35px; background: linear-gradient(135deg, #00d2ff 0%, #00a2ff 100%); color: #000000; text-decoration: none; border-radius: 30px; font-weight: 700; font-size: 15px; box-shadow: 0 4px 15px rgba(0, 210, 255, 0.4); transition: 0.3s ease; display: inline-flex; align-items: center; gap: 8px; border: none; cursor: pointer; }
+.btn-browse:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0, 210, 255, 0.6); }
+.services-section { padding: 100px 8% 100px 8%; text-align: center; }
+.services-title { font-size: 32px; font-weight: 700; margin-bottom: 50px; color: #ffffff; position: relative; display: inline-block; }
+.services-title::after { content: ''; display: block; width: 60px; height: 3px; background: #00c3ff; margin: 12px auto 0 auto; border-radius: 2px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+.card { background: rgba(21, 32, 66, 0.4); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; overflow: hidden; transition: 0.4s ease; text-align: center; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); }
+.card:hover { transform: translateY(-10px); border-color: #00c3ff; box-shadow: 0 15px 35px rgba(0, 195, 255, 0.15); }
+.card img { width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+.card-content { padding: 30px 25px; }
+.card h3 { font-size: 20px; font-weight: 700; margin-bottom: 15px; color: #ffffff; }
+.card p { color: #94a3b8; font-size: 14px; line-height: 1.7; }
+.floating-cart { position: fixed; bottom: 30px; right: 40px; padding: 14px 28px; background: linear-gradient(135deg, #00d2ff 0%, #00a2ff 100%); color: #000000; text-decoration: none; border-radius: 30px; font-weight: 700; font-size: 15px; box-shadow: 0 5px 20px rgba(0, 210, 255, 0.4); display: flex; align-items: center; gap: 10px; z-index: 9999; }
+.cart-count { background: #ff3b30; color: white; border-radius: 50%; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; }ify-content: center; font-size: 12px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo-container">
+    <img src="logo.png" alt="Logo">
+    <span class="logo-text">myprinter.lk</span>
+</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="hero">
+        <h1 style="font-size: 46px; font-weight: 800; text-transform: uppercase; margin-bottom: 25px; background: linear-gradient(to bottom, #ff9e00 0%, #ff3c00 55%, #b30000 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">QUANTUM LEAP TECHNOLOGIES</h1>
+        <p class="eng-sub">Premium Computer Parts, Printer Solutions & Specialized Chip-Level Repair Services.</p>
+        <p class="sin-sub">ඔබගේ සියලුම පරිගණක තාක්ෂණික දෝෂයන් සඳහා විශ්වාසනීය සහ කඩිනම් විසඳුම්.</p>
+        <a href="shop.html" class="btn-browse">Browse Products 🛒</a>
+    </div>
+    <div class="services-section" id="services">
+        <h2 class="services-title">Professional Services</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://i.ibb.co/1JM1xHmq/Gemini-Generated-Image-5n81qt5n81qt5n81.png" alt="Printer Repair">
+                <div class="card-content">
+                    <h3>Printer Repair & Maintenance</h3>
+                    <p>HP, Canon, Epson, Samsung ඇතුළු ඕනෑම වර්ගයක ප්‍රින්ටර් සඳහා එකම වහලක් යටින්, ඉතා ඉක්මනින් සහ විශ්වාසනීයත්වයෙන් යුතුව අලුත්වැඩියා කර දීමට අප සූදානම්.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://i.ibb.co/0yjggLnv/Gemini-Generated-Image-7ce8wt7ce8wt7ce8.png" alt="Hardware Repair">
+                <div class="card-content">
+                    <h3>Hardware & Laptop Repair</h3>
+                    <p>Asus, Dell, HP, Lenovo ඇතුළු ඕනෑම සන්නාමයක ලැප්ටොප් සහ ඩෙස්ක්ටොප් පරිගණක වල ඇති වන සියලුම දෝෂ ඉතා ඉක්මනින් සහ වගකීමක් සහිතව අලුත්වැඩියා කර දීමට අප සූදානම්.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://i.ibb.co/cqpd7g6/Chat-GPT-Image-Jul-6-2026-06-08-53-PM.png" alt="Spare Parts">
+                <div class="card-content">
+                    <h3>Spare Parts</h3>
+                    <p>ඔබේ පරිගණක, ලැප්ටොප් සහ ප්‍රින්ටර් වලට අවශ්‍ය සියලුම උසස් තත්ත්වයේ අමතර කොටස් එකම වහලක් යටින් සාධාරණ මිල ගණන් යටතේ අපෙන් මිලදී ගත හැක.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="shop.html" class="floating-cart"><span>View Cart</span> 🛒 <span class="cart-count">0</span></a>
+<a href="https://wa.me/94717354968?text=Hi%20Quantum%20Leap%20Technologies,%20I%20need%20more%20information%20about%20your%20services." 
+       target="_blank" 
+       style="position: fixed; bottom: 100px; right: 40px; background-color: #25D366; color: white; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.3); z-index: 9999; text-decoration: none;">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</body>
+</html>
